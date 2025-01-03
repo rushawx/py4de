@@ -1,0 +1,37 @@
+[2025-01-03T13:36:50.772+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-01-03T13:36:50.781+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: etl.replicate manual__2025-01-03T13:26:53.564501+00:00 [queued]>
+[2025-01-03T13:36:50.785+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: etl.replicate manual__2025-01-03T13:26:53.564501+00:00 [queued]>
+[2025-01-03T13:36:50.785+0000] {taskinstance.py:2865} INFO - Starting attempt 6 of 6
+[2025-01-03T13:36:50.792+0000] {taskinstance.py:2888} INFO - Executing <Task(_PythonDecoratedOperator): replicate> on 2025-01-03 13:26:53.564501+00:00
+[2025-01-03T13:36:50.796+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=610) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-01-03T13:36:50.797+0000] {standard_task_runner.py:72} INFO - Started process 611 to run task
+[2025-01-03T13:36:50.798+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'etl', 'replicate', 'manual__2025-01-03T13:26:53.564501+00:00', '--job-id', '19', '--raw', '--subdir', 'DAGS_FOLDER/etl.py', '--cfg-path', '/tmp/tmpda95deni']
+[2025-01-03T13:36:50.798+0000] {standard_task_runner.py:105} INFO - Job 19: Subtask replicate
+[2025-01-03T13:36:50.824+0000] {task_command.py:467} INFO - Running <TaskInstance: etl.replicate manual__2025-01-03T13:26:53.564501+00:00 [running]> on host f6c52e409999
+[2025-01-03T13:36:50.864+0000] {taskinstance.py:3131} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='etl' AIRFLOW_CTX_TASK_ID='replicate' AIRFLOW_CTX_EXECUTION_DATE='2025-01-03T13:26:53.564501+00:00' AIRFLOW_CTX_TRY_NUMBER='6' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-01-03T13:26:53.564501+00:00'
+[2025-01-03T13:36:50.864+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2025-01-03T13:36:51.223+0000] {crypto.py:82} WARNING - empty cryptography key - values will not be stored encrypted.
+[2025-01-03T13:36:51.224+0000] {base.py:84} INFO - Retrieving connection 'postgres'
+[2025-01-03T13:36:51.232+0000] {base.py:84} INFO - Retrieving connection 'mysql'
+[2025-01-03T13:36:51.243+0000] {logging_mixin.py:190} INFO - Table Database.PRODUCT_CATEGORIES has 1 rows
+[2025-01-03T13:36:51.268+0000] {logging_mixin.py:190} INFO - Table Database.USERS has 1 rows
+[2025-01-03T13:36:51.286+0000] {logging_mixin.py:190} INFO - Table Database.PRODUCTS has 1 rows
+[2025-01-03T13:36:51.299+0000] {logging_mixin.py:190} INFO - Table Database.ORDERS has 1 rows
+[2025-01-03T13:36:51.313+0000] {logging_mixin.py:190} INFO - Table Database.ORDER_DETAILS has 1 rows
+[2025-01-03T13:36:51.325+0000] {base.py:791} ERROR - Exception during reset or similar
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 763, in _finalize_fairy
+    fairy._reset(pool, transaction_was_reset)
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 1038, in _reset
+    pool._dialect.do_rollback(self)
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 683, in do_rollback
+    dbapi_connection.rollback()
+MySQLdb.ProgrammingError: (2014, "Commands out of sync; you can't run this command now")
+[2025-01-03T13:36:51.326+0000] {python.py:240} INFO - Done. Returned value was: None
+[2025-01-03T13:36:51.333+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2025-01-03T13:36:51.334+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=etl, task_id=replicate, run_id=manual__2025-01-03T13:26:53.564501+00:00, execution_date=20250103T132653, start_date=20250103T133650, end_date=20250103T133651
+[2025-01-03T13:36:51.367+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-01-03T13:36:51.376+0000] {taskinstance.py:3900} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-01-03T13:36:51.377+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

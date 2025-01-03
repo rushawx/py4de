@@ -1,0 +1,42 @@
+[2025-01-03T13:37:36.177+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-01-03T13:37:36.185+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: etl.replicate manual__2025-01-03T13:26:53.564501+00:00 [queued]>
+[2025-01-03T13:37:36.189+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: etl.replicate manual__2025-01-03T13:26:53.564501+00:00 [queued]>
+[2025-01-03T13:37:36.189+0000] {taskinstance.py:2865} INFO - Starting attempt 7 of 7
+[2025-01-03T13:37:36.200+0000] {taskinstance.py:2888} INFO - Executing <Task(_PythonDecoratedOperator): replicate> on 2025-01-03 13:26:53.564501+00:00
+[2025-01-03T13:37:36.204+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=621) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-01-03T13:37:36.205+0000] {standard_task_runner.py:72} INFO - Started process 622 to run task
+[2025-01-03T13:37:36.206+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'etl', 'replicate', 'manual__2025-01-03T13:26:53.564501+00:00', '--job-id', '20', '--raw', '--subdir', 'DAGS_FOLDER/etl.py', '--cfg-path', '/tmp/tmpv09tzdqx']
+[2025-01-03T13:37:36.207+0000] {standard_task_runner.py:105} INFO - Job 20: Subtask replicate
+[2025-01-03T13:37:36.236+0000] {task_command.py:467} INFO - Running <TaskInstance: etl.replicate manual__2025-01-03T13:26:53.564501+00:00 [running]> on host f6c52e409999
+[2025-01-03T13:37:36.284+0000] {taskinstance.py:3131} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='etl' AIRFLOW_CTX_TASK_ID='replicate' AIRFLOW_CTX_EXECUTION_DATE='2025-01-03T13:26:53.564501+00:00' AIRFLOW_CTX_TRY_NUMBER='7' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-01-03T13:26:53.564501+00:00'
+[2025-01-03T13:37:36.284+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2025-01-03T13:37:36.704+0000] {crypto.py:82} WARNING - empty cryptography key - values will not be stored encrypted.
+[2025-01-03T13:37:36.705+0000] {base.py:84} INFO - Retrieving connection 'postgres'
+[2025-01-03T13:37:36.718+0000] {base.py:84} INFO - Retrieving connection 'mysql'
+[2025-01-03T13:37:36.731+0000] {logging_mixin.py:190} INFO - [(UUID('7deec2b6-180f-4fc5-acd5-758ba2c8c3ca'), 'smartphohe', None)]
+[2025-01-03T13:37:36.731+0000] {logging_mixin.py:190} INFO - Table Database.PRODUCT_CATEGORIES has 1 rows
+[2025-01-03T13:37:36.748+0000] {logging_mixin.py:190} INFO - [(UUID('fbc24a7a-7f33-4072-a7bf-aa1c169e0690'), 'Олимпиада', 'Федоров', 'ipat2024@example.org', '8 (205) 393-86-62', datetime.datetime(2013, 7, 28, 16, 18, 17, 77314, tzinfo=datetime.timezone.utc), 'Silver')]
+[2025-01-03T13:37:36.748+0000] {logging_mixin.py:190} INFO - Table Database.USERS has 1 rows
+[2025-01-03T13:37:36.760+0000] {logging_mixin.py:190} INFO - [(UUID('5d14946a-8412-478c-bffd-6f3abf2746cd'), 'прощение', 'Кидать четко одиннадцать кожа приходить цепочка. Дошлый светило коммунизм заплакать монета указанный.\nВообще означать витрина смелый триста направо.', UUID('1e69f0e1-e072-41e6-be84-3a76830826a6'), 627.23, 975, datetime.datetime(1979, 11, 21, 7, 51, 58, 394848, tzinfo=datetime.timezone.utc))]
+[2025-01-03T13:37:36.760+0000] {logging_mixin.py:190} INFO - Table Database.PRODUCTS has 1 rows
+[2025-01-03T13:37:36.773+0000] {logging_mixin.py:190} INFO - [(UUID('8b2c8a5c-647e-4d6a-81f7-4fa0e28cdc6f'), UUID('3db0f782-3b8b-44f6-9cbf-679e6a1be2ed'), datetime.datetime(1990, 3, 5, 18, 17, 8, 309766, tzinfo=datetime.timezone.utc), 451.37, 'completed', datetime.datetime(2000, 12, 4, 22, 14, 13, 896253, tzinfo=datetime.timezone.utc))]
+[2025-01-03T13:37:36.773+0000] {logging_mixin.py:190} INFO - Table Database.ORDERS has 1 rows
+[2025-01-03T13:37:36.783+0000] {logging_mixin.py:190} INFO - [(UUID('bf717f2a-845c-4759-921b-f385e3e0425f'), UUID('8b2c8a5c-647e-4d6a-81f7-4fa0e28cdc6f'), UUID('ae586d77-616a-4cc1-8fa6-06f57bcad929'), 976, 912.15, 124.33)]
+[2025-01-03T13:37:36.784+0000] {logging_mixin.py:190} INFO - Table Database.ORDER_DETAILS has 1 rows
+[2025-01-03T13:37:36.793+0000] {base.py:791} ERROR - Exception during reset or similar
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 763, in _finalize_fairy
+    fairy._reset(pool, transaction_was_reset)
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 1038, in _reset
+    pool._dialect.do_rollback(self)
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 683, in do_rollback
+    dbapi_connection.rollback()
+MySQLdb.ProgrammingError: (2014, "Commands out of sync; you can't run this command now")
+[2025-01-03T13:37:36.798+0000] {python.py:240} INFO - Done. Returned value was: None
+[2025-01-03T13:37:36.804+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2025-01-03T13:37:36.804+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=etl, task_id=replicate, run_id=manual__2025-01-03T13:26:53.564501+00:00, execution_date=20250103T132653, start_date=20250103T133736, end_date=20250103T133736
+[2025-01-03T13:37:36.843+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-01-03T13:37:36.853+0000] {taskinstance.py:3900} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-01-03T13:37:36.854+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
