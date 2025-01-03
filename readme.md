@@ -2,7 +2,7 @@
 <br>
 Использвание:
 <li>Запуск `make build_all`</li>
-<li>Остановка `make destoroy_all`</li>
+<li>Остановка `make destroy_all`</li>
 <br>
 Даг `etl` отвечает за репликацию данных из Postgres в MySQL.
 <br>
